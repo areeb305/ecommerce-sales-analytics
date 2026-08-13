@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project analyzes e-commerce sales data to understand business performance, customer behavior, product performance, and profitability.
+This project analyzes e-commerce sales data to understand business performance, customer behavior, product performance, and sales trends.
 
 The project follows an end-to-end data analytics workflow covering data preparation, exploratory data analysis, business KPI analysis, SQL analysis, and data visualization.
 
@@ -12,13 +12,12 @@ An online retail company wants to understand how its sales are performing and id
 
 The analysis will answer questions such as:
 
-- How much revenue and profit does the company generate?
-- Which products and categories perform best?
-- Which regions generate the most revenue?
+- How much sales revenue does the company generate?
+- Which products generate the most sales revenue?
+- Which countries generate the most sales revenue?
 - How do sales change over time?
 - Which customers contribute the most revenue?
-- How do discounts affect profitability?
-- Which areas represent opportunities for improvement?
+- What sales patterns and customer behaviors reveal potential business opportunities?
 
 ## Objectives
 
@@ -67,3 +66,51 @@ ecommerce-sales-analytics/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
+
+## Dataset
+
+This project uses the Online Retail dataset from the UCI Machine Learning Repository.
+
+The raw dataset contains transaction-level sales records, including invoice numbers, product codes, product descriptions, quantities, invoice dates, unit prices, customer IDs, and countries.
+
+The raw data is excluded from version control. A reusable Python cleaning pipeline processes the raw Excel file and creates an analysis-ready CSV dataset.
+
+### Data Cleaning Summary
+
+The raw dataset contained **541,909 rows and 8 columns**.
+
+After cleaning, the dataset contains **524,878 rows and 13 columns**.
+
+A total of **17,031 rows (3.14%)** were removed during data cleaning.
+
+The cleaning process included:
+
+- Removing duplicate transactions
+- Removing cancelled invoices
+- Removing non-positive quantities
+- Removing zero or negative unit prices
+- Removing records with missing product descriptions
+- Preserving transactions with missing Customer IDs for non-customer-specific analysis
+- Creating a `sales` variable from quantity × unit price
+- Creating year, month, month name, and day-of-week features
+
+## Project Progress
+
+- [x] Project setup
+- [x] Business problem definition
+- [x] Data collection
+- [x] Data cleaning
+- [ ] Exploratory data analysis
+- [ ] KPI analysis
+- [ ] Customer analysis
+- [ ] Product analysis
+- [ ] Country analysis
+- [ ] SQL analysis
+- [ ] Data visualization
+- [ ] Business recommendations
+- [ ] Final documentation
+
+## Author
+
+Muhammad Areeb
